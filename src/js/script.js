@@ -16,30 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			item.children[0].lastChild.style.transform = "rotateX(90deg)";
 		});
 	});
-
-	const dayIcons = document.querySelectorAll(".day-icon")
-	dayIcons.forEach(icon => {
-		const morningIcon = document.querySelector("#morning");
-		const afternoonIcon = document.querySelector("#afternoon");
-		const eveningIcon = document.querySelector("#evening");
-		let ableIcon = "morning";
-		icon.addEventListener("click", () => {
-			switch (ableIcon) {
-				case "morning":
-					morningIcon.style.transform = "translate(44.5rem, 1rem)";
-					
-					eveningIcon.style.transform = ""
-					break;
-				case "afternoon":
-					break;
-				case "evening":
-					break;
-				
-				default:
-					break;
-			}
-		});
-	});
-
-
 });
+
+
