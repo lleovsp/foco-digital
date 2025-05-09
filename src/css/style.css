@@ -74,6 +74,10 @@ main {
 			gap: 0.2rem;
 			& .action-buttons {
 				gap: 0.5rem;
+				position:sticky;
+				transform: translate(32rem, 5rem);
+				width: max-content;
+				
 				& .button {
 					background-color: var(--azul-claro);
 					color: var(--bege-claro);
@@ -98,6 +102,8 @@ main {
 			}
 			& .to-do-list {
 				gap: 0.8rem;
+				margin-top: 1rem;
+				padding: 0 0.8rem;
 				& .to-do-item {
 					& .goals {
 						font-size: 1.2rem;
@@ -108,32 +114,73 @@ main {
 						align-items: center;
 						justify-content: start;
 						padding-left: 1rem;
+						&.done{
+							& .to-do-text{
+								text-decoration:line-through;
+								text-decoration-color: var(--cinza-claro);
+								color: #ed5752b2;
+							}
+						}
 						& .checkbox {
 							position: absolute;
 							transform: translate(-1.5rem, 0.55rem);
 						}
-						& svg:last-child {
+						& svg {
 							width: 1.2rem;
 							height: 2;
 							&#last {
 								transform: rotate(90deg);
 							}
 						}
+						& .description{
+							gap: 0.8rem;
+							width: 100%;
+							height: max-content;
+							background-color: var(--bege-claro);
+							border-radius: 0.5rem;
+							cursor: text;
+							padding: 1rem 0.8rem;
+							& h3{
+								font-size: 1.8rem;
+							}
+							& p{
+								font-size: 1.1rem;
+							}
+						}
 					}
 				}
 			}
 			& .section {
+				& .day-icon{
+					cursor: pointer;
+					position: absolute;
+					transition: display, transform 1s;
+					transform: translate(46.5rem);
+					&#afternoon{
+						transform: translate(48.5rem, 1rem);
+					}
+					&#evening{
+						transform: translate(44.5rem, 1rem);
+					}
+				}
+				position: relative;
 				border: 1px solid var(--cinza-claro);
-				box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.09),
+				border-radius: 1rem;
+				box-shadow: 2px 2px 2px white,
 					2px -2px 2px rgba(0, 0, 0, 0.09),
 					-2px 2px 2px rgba(0, 0, 0, 0.09),
 					-2px -2px 2px rgba(0, 0, 0, 0.09);
+
 				padding: 1rem 0.8rem;
 				width: 50rem;
+				height:30rem;
 			}
 		}
 		& nav {
+			margin-top: 2.3rem;
+			gap: 0.8rem;
 			width: 20rem;
+			height: max-content;
 			border: 1px solid var(--cinza-claro);
 			padding: 1rem 0.8rem;
 			border-radius: 1rem;
@@ -152,6 +199,7 @@ main {
 					margin: 0.8rem;
 					align-items: center;
 					gap: 0.5rem;
+					max-width: max-content;
 					& div {
 						display: flex;
 						flex-flow: column;
@@ -167,6 +215,7 @@ main {
 							&:hover {
 								font-weight: bold;
 								color: var(--vermelho-principal);
+								
 							}
 						}
 					}
